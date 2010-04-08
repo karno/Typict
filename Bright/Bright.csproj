@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8AA0F593-7F2A-4BFC-8C41-0ED69E7A9B19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bright</RootNamespace>
+    <AssemblyName>typict</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>bright.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SpiMngx, Version=1.1.0.1, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SpiMngx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.24483, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core.cs" />
+    <Compile Include="Cores\Config.cs" />
+    <Compile Include="Data\Destination.cs" />
+    <Compile Include="Data\GroupingElement.cs" />
+    <Compile Include="Data\Operation.cs" />
+    <Compile Include="Define.cs" />
+    <Compile Include="Forms\Config\Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\ConfigPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\ConfigPage.Designer.cs">
+      <DependentUpon>ConfigPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Behavior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Behavior.Designer.cs">
+      <DependentUpon>Behavior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Display.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Display.Designer.cs">
+      <DependentUpon>Display.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\DistributionBehavior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\DistributionBehavior.Designer.cs">
+      <DependentUpon>DistributionBehavior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Overlaps\Overlap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Overlaps\Overlap.Designer.cs">
+      <DependentUpon>Overlap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Overlaps\OverlapText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Overlaps\OverlapText.Designer.cs">
+      <DependentUpon>OverlapText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Overlaps\OverlapThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Overlaps\OverlapThumbnail.Designer.cs">
+      <DependentUpon>OverlapThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Prefetch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Config\Pages\Prefetch.Designer.cs">
+      <DependentUpon>Prefetch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddKey.Designer.cs">
+      <DependentUpon>AddKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\KeySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\KeySetup.Designer.cs">
+      <DependentUpon>KeySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\MultiProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\MultiProcess.Designer.cs">
+      <DependentUpon>MultiProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Rename.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Rename.Designer.cs">
+      <DependentUpon>Rename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\UnhandledExcp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\UnhandledExcp.Designer.cs">
+      <DependentUpon>UnhandledExcp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Version.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\Version.Designer.cs">
+      <DependentUpon>Version.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grouping\Duplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grouping\Duplication.Designer.cs">
+      <DependentUpon>Duplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Grouping\GroupingExec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Grouping\GroupingExec.Designer.cs">
+      <DependentUpon>GroupingExec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\KeyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\KeyView.Designer.cs">
+      <DependentUpon>KeyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\OperationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\OperationView.Designer.cs">
+      <DependentUpon>OperationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\OpView\ElementList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\OpView\ElementList.Designer.cs">
+      <DependentUpon>ElementList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\PictureView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\PictureView.Designer.cs">
+      <DependentUpon>PictureView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\Picture\Renderer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Docks\Picture\Renderer.Designer.cs">
+      <DependentUpon>Renderer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setup\Setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setup\Setup.Designer.cs">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\GetAllDirectories.cs" />
+    <Compile Include="Import\GetWindowNormalLoc.cs" />
+    <Compile Include="Import\ImageSafeReader.cs" />
+    <Compile Include="Import\LoadCursor.cs" />
+    <Compile Include="Import\PathLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Import\SaveLoadXML.cs" />
+    <Compile Include="Import\ScrollBarPlus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Import\SetButtonShield.cs" />
+    <Compile Include="Import\ShellLink.cs" />
+    <Compile Include="Import\WinAPIBase.cs" />
+    <Compile Include="Import\WinExit.cs" />
+    <Compile Include="Import\XFont.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Config\Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\ConfigPage.resx">
+      <DependentUpon>ConfigPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\Behavior.resx">
+      <DependentUpon>Behavior.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\Display.resx">
+      <DependentUpon>Display.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\DistributionBehavior.resx">
+      <DependentUpon>DistributionBehavior.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\Overlaps\Overlap.resx">
+      <DependentUpon>Overlap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\Overlaps\OverlapText.resx">
+      <DependentUpon>OverlapText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\Overlaps\OverlapThumbnail.resx">
+      <DependentUpon>OverlapThumbnail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Config\Pages\Prefetch.resx">
+      <DependentUpon>Prefetch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddKey.resx">
+      <DependentUpon>AddKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\KeySetup.resx">
+      <DependentUpon>KeySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\MultiProcess.resx">
+      <DependentUpon>MultiProcess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Rename.resx">
+      <DependentUpon>Rename.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\UnhandledExcp.resx">
+      <DependentUpon>UnhandledExcp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\Version.resx">
+      <DependentUpon>Version.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grouping\Duplication.resx">
+      <DependentUpon>Duplication.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Grouping\GroupingExec.resx">
+      <DependentUpon>GroupingExec.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docks\KeyView.resx">
+      <DependentUpon>KeyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docks\OperationView.resx">
+      <DependentUpon>OperationView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Docks\PictureView.resx">
+      <DependentUpon>PictureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setup\Setup.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Subsystem\ImageReader.cs" />
+    <Compile Include="Subsystem\KeyNamenizer.cs" />
+    <Compile Include="Subsystem\OperationPackager.cs" />
+    <Compile Include="Subsystem\Prefetch.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pick.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bright16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bright40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bright48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bright.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folderq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opflow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keywnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opflowwnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_qwerty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drive_magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grab.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bright.ico" />
+    <Content Include="Resources\externalapp.png" />
+    <Content Include="Resources\link.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
